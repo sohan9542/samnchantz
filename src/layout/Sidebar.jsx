@@ -79,7 +79,7 @@ const Sidebar = () => {
                 exact
                 activeClassName="hvr tc w-full"
                 className="py-2 flex items-center gap-2 px-2 text-gray-700 hover:text-sr w-full"
-                to="/clist"
+                to="/users"
               >
                 {" "}
                 Users
@@ -90,7 +90,7 @@ const Sidebar = () => {
                 exact
                 activeClassName="hvr tc w-full"
                 className="py-2 flex items-center gap-2 px-2 text-gray-700 hover:text-sr w-full"
-                to="/vlist"
+                to="/departments"
               >
                 {" "}
                 Departments
@@ -123,7 +123,7 @@ const Sidebar = () => {
                 exact
                 activeClassName="hvr tc w-full"
                 className="py-2 flex items-center gap-2 px-2 text-gray-700 hover:text-sr w-full"
-                to="/payment-history"
+                to="/issues"
               >
                 {" "}
                 Issues
@@ -134,7 +134,7 @@ const Sidebar = () => {
                 exact
                 activeClassName="hvr tc w-full"
                 className="py-2 flex items-center gap-2 px-2 text-gray-700 hover:text-sr w-full"
-                to="/wallet"
+                to="/knowledgebase"
               >
                 {" "}
                 Knowledgebase
@@ -145,7 +145,7 @@ const Sidebar = () => {
                 exact
                 activeClassName="hvr tc w-full"
                 className="py-2 flex items-center gap-2 px-2 text-gray-700 hover:text-sr w-full"
-                to="/invoices"
+                to="/timesheets"
               >
                 {" "}
                 Timesheets
@@ -156,7 +156,7 @@ const Sidebar = () => {
                 exact
                 activeClassName="hvr tc w-full"
                 className="py-2 flex items-center gap-2 px-2 text-gray-700 hover:text-sr w-full"
-                to="/invoices"
+                to="/it-services"
               >
                 {" "}
                 IT Services
@@ -167,7 +167,7 @@ const Sidebar = () => {
                 exact
                 activeClassName="hvr tc w-full"
                 className="py-2 flex items-center gap-2 px-2 text-gray-700 hover:text-sr w-full"
-                to="/invoices"
+                to="/additonal-tools"
               >
                 {" "}
                 [Additional Tools...]
@@ -194,7 +194,7 @@ const Sidebar = () => {
                 exact
                 activeClassName="hvr tc w-full"
                 className="py-2 flex items-center gap-2 px-2 text-gray-700 hover:text-sr w-full"
-                to="/clist"
+                to="/userprofile"
               >
                 {" "}
                 User Profile
@@ -205,7 +205,7 @@ const Sidebar = () => {
                 exact
                 activeClassName="hvr tc w-full"
                 className="py-2 flex items-center gap-2 px-2 text-gray-700 hover:text-sr w-full"
-                to="/vlist"
+                to="/organization"
               >
                 {" "}
                 Organization
