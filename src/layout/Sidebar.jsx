@@ -14,10 +14,9 @@ import {
   MdOutlineAdminPanelSettings,
   MdOutlineArrowBackIos,
 } from "react-icons/md";
-import { AiOutlineTransaction } from "react-icons/ai";
-import { IoFlaskOutline } from "react-icons/io5";
+
 import { NavLink } from "react-router-dom";
-const Sidebar = () => {
+const Sidebar = ({setShowsidebar}) => {
   const [contractshow, setContractshow] = useState(false);
   const [transhow, setTranshow] = useState(false);
   const [setting, setSetting] = useState(false);
@@ -39,6 +38,7 @@ const Sidebar = () => {
             activeClassName="hvr tc w-full"
             className="py-2 flex items-center gap-2 px-2 text-gray-700 hover:text-sr w-full"
             to="/"
+            onClick={()=>setShowsidebar(false)}
           >
             {" "}
             <FiHome className="w-5 h-5" /> Dashboard
@@ -50,6 +50,7 @@ const Sidebar = () => {
             activeClassName="hvr tc w-full"
             className="py-2 flex items-center gap-2 px-2 text-gray-700 hover:text-sr w-full"
             to="/device"
+            onClick={()=>setShowsidebar(false)}
           >
             {" "}
             <FiBarChart2 className="w-5 h-5" /> Stats
@@ -77,6 +78,7 @@ const Sidebar = () => {
             <div className="w-full pl-1 flex items-center justify-center">
               <NavLink
                 exact
+                onClick={()=>setShowsidebar(false)}
                 activeClassName="hvr tc w-full"
                 className="py-2 flex items-center gap-2 px-2 text-gray-700 hover:text-sr w-full"
                 to="/users"
@@ -88,6 +90,7 @@ const Sidebar = () => {
             <div className="w-full pl-1 flex items-center justify-center">
               <NavLink
                 exact
+                onClick={()=>setShowsidebar(false)}
                 activeClassName="hvr tc w-full"
                 className="py-2 flex items-center gap-2 px-2 text-gray-700 hover:text-sr w-full"
                 to="/departments"
@@ -124,6 +127,7 @@ const Sidebar = () => {
                 activeClassName="hvr tc w-full"
                 className="py-2 flex items-center gap-2 px-2 text-gray-700 hover:text-sr w-full"
                 to="/issues"
+                onClick={()=>setShowsidebar(false)}
               >
                 {" "}
                 Issues
@@ -135,6 +139,7 @@ const Sidebar = () => {
                 activeClassName="hvr tc w-full"
                 className="py-2 flex items-center gap-2 px-2 text-gray-700 hover:text-sr w-full"
                 to="/knowledgebase"
+                onClick={()=>setShowsidebar(false)}
               >
                 {" "}
                 Knowledgebase
@@ -146,6 +151,7 @@ const Sidebar = () => {
                 activeClassName="hvr tc w-full"
                 className="py-2 flex items-center gap-2 px-2 text-gray-700 hover:text-sr w-full"
                 to="/timesheets"
+                onClick={()=>setShowsidebar(false)}
               >
                 {" "}
                 Timesheets
@@ -157,6 +163,7 @@ const Sidebar = () => {
                 activeClassName="hvr tc w-full"
                 className="py-2 flex items-center gap-2 px-2 text-gray-700 hover:text-sr w-full"
                 to="/it-services"
+                onClick={()=>setShowsidebar(false)}
               >
                 {" "}
                 IT Services
@@ -168,6 +175,7 @@ const Sidebar = () => {
                 activeClassName="hvr tc w-full"
                 className="py-2 flex items-center gap-2 px-2 text-gray-700 hover:text-sr w-full"
                 to="/additonal-tools"
+                onClick={()=>setShowsidebar(false)}
               >
                 {" "}
                 [Additional Tools...]
@@ -195,6 +203,7 @@ const Sidebar = () => {
                 activeClassName="hvr tc w-full"
                 className="py-2 flex items-center gap-2 px-2 text-gray-700 hover:text-sr w-full"
                 to="/userprofile"
+                 onClick={()=>setShowsidebar(false)}
               >
                 {" "}
                 User Profile
@@ -206,6 +215,7 @@ const Sidebar = () => {
                 activeClassName="hvr tc w-full"
                 className="py-2 flex items-center gap-2 px-2 text-gray-700 hover:text-sr w-full"
                 to="/organization"
+                 onClick={()=>setShowsidebar(false)}
               >
                 {" "}
                 Organization

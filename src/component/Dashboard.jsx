@@ -8,8 +8,8 @@ import {
 } from "react-icons/ai";
 import { BsChat } from "react-icons/bs";
 import { Bar } from "react-chartjs-2";
-import Chart from 'chart.js/auto';
-import {CategoryScale} from 'chart.js'
+import Chart from "chart.js/auto";
+import { CategoryScale } from "chart.js";
 export const options = {
   responsive: true,
 };
@@ -35,12 +35,34 @@ const data = {
   ],
 };
 
-Chart.register(CategoryScale)
+Chart.register(CategoryScale);
 const Dashboard = () => {
   const [mainActive, setMainActive] = useState(true);
   const [time, setTime] = useState(1);
   const [bactive, setBactive] = useState(1);
-  
+  const [count, setCount] = useState(0);
+  const issues = [
+    {
+      title: "Recent Issues",
+      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam ab magnam voluptas ipsum dignissimos rerum numquam autem ducimus, quas illum et quod nesciunt, a magni enim. Soluta nesciunt eius totam?",
+    },
+    {
+      title: "Tools Widge B",
+      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam ab magnam voluptas ipsum dignissimos rerum numquam autem ducimus, quas illum et quod nesciunt, a magni enim. Soluta nesciunt eius totam?",
+    },
+    {
+      title: "Tools Widge C",
+      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam ab magnam voluptas ipsum dignissimos rerum numquam autem ducimus, quas illum et quod nesciunt, a magni enim. Soluta nesciunt eius totam?",
+    },
+    {
+      title: "Tools Widge D",
+      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam ab magnam voluptas ipsum dignissimos rerum numquam autem ducimus, quas illum et quod nesciunt, a magni enim. Soluta nesciunt eius totam?",
+    },
+    {
+      title: "Tools Widge E",
+      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam ab magnam voluptas ipsum dignissimos rerum numquam autem ducimus, quas illum et quod nesciunt, a magni enim. Soluta nesciunt eius totam?",
+    },
+  ];
   return (
     <div className="p-3 min-h-screen">
       <h1 className="text-gray-600  mt-16 text-2xl font-medium">
@@ -165,38 +187,41 @@ const Dashboard = () => {
       </div>
       <div className="mt-6">
         <div className="w-full flex items-center justify-between">
-          <AiOutlineArrowLeft className="text-gray-600 w-6 h-6 cursor-pointer" />
+          <AiOutlineArrowLeft  onClick={count === 0  ? null : () => setCount(count - 1)} className="text-gray-600 w-6 h-6 cursor-pointer" />
           <h6 className="text-lg font-medium text-gray-600">
             Todays Highlights
           </h6>
-          <AiOutlineArrowRight className="text-gray-600 w-6 h-6 cursor-pointer" />
+          <AiOutlineArrowRight
+            onClick={count + 1 === issues.length ? null : () => setCount(count + 1)}
+            className="text-gray-600 w-6 h-6 cursor-pointer"
+          />
         </div>
       </div>
-      <div className="w-full mt-6 grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <div className=" border-2 py-3 px-3 flex  flex-col">
-          <h1 className="text-3xl text-gray-600">Recent Issues</h1>
-          <p className="text-xs text-gray-500 pt-3">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
-            ab magnam voluptas ipsum dignissimos rerum numquam autem ducimus,
-            quas illum et quod nesciunt, a magni enim. Soluta nesciunt eius
-            totam?
-          </p>
-          <div className=" w-full flex items-center justify-end">
-            <button className="bg-pr text-white text-sm px-3 py-1 rounded-md hover:bg-blue-700">Go</button>
+      <div className="w-full hidden lg:grid mt-6 grid-cols-2 gap-8">
+        {issues.slice(count, count + 2).map((item, ind) => (
+          <div key={ind} className=" border-2 py-3 px-3 flex  flex-col">
+            <h1 className="text-3xl text-gray-600">{item.title}</h1>
+            <p className="text-xs text-gray-500 pt-3">{item.desc}</p>
+            <div className=" w-full flex items-center justify-end">
+              <button className="bg-pr text-white text-sm px-3 py-1 rounded-md hover:bg-blue-700">
+                Go
+              </button>
+            </div>
           </div>
-        </div>
-        <div className=" border-2 py-3 px-3 flex   flex-col">
-          <h1 className="text-3xl text-gray-600">Tools Widge B</h1>
-          <p className="text-xs text-gray-500 pt-3">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
-            ab magnam voluptas ipsum dignissimos rerum numquam autem ducimus,
-            quas illum et quod nesciunt, a magni enim. Soluta nesciunt eius
-            totam?
-          </p>
-          <div className=" w-full flex items-center justify-end">
-            <button className="bg-pr text-white text-sm px-3 py-1 rounded-md hover:bg-blue-700">Go</button>
+        ))}
+      </div>
+      <div className="w-full grid lg:hidden  mt-6 grid-cols-1 gap-8">
+        {issues.slice(count, count + 1).map((item, ind) => (
+          <div key={ind} className=" border-2 py-3 px-3 flex  flex-col">
+            <h1 className="text-3xl text-gray-600">{item.title}</h1>
+            <p className="text-xs text-gray-500 pt-3">{item.desc}</p>
+            <div className=" w-full flex items-center justify-end">
+              <button className="bg-pr text-white text-sm px-3 py-1 rounded-md hover:bg-blue-700">
+                Go
+              </button>
+            </div>
           </div>
-        </div>
+        ))}
       </div>
     </div>
   );
