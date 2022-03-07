@@ -24,7 +24,7 @@ const Sidebar = () => {
   return (
     <div
       style={{ top: "65px" }}
-      className="fixed  w-40 bg-white lg:w-60 p-2  z-30 border-r-2 min-h-screen"
+      className="fixed  w-44 bg-white lg:w-60 p-2  z-30 border-r-2 min-h-screen overflow-y-scroll"
     >
       <div className="flex w-full items-center justify-center lg:justify-between h-14 border-b">
         <CgProfile className="h-8 w-8 text-gray-600" />
