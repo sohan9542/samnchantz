@@ -135,10 +135,12 @@ const Dashboard = () => {
         </div>
       </div>
       <div className=" mt-6 bg-white shadow-md w-full">
-        <div className=" border-b-2 pb-2">
+       <div className=" flex items-center justify-center w-full">
+       <div style={{width:"70%"}} className=" border-b-2 pb-2 h-72">
           <Bar options={options} data={data} />
         </div>
-        <div className=" grid grid-cols-2 lg:grid-cols-4">
+       </div>
+        <div className=" grid mt-12 grid-cols-2 lg:grid-cols-4">
           <div
             onClick={() => setBactive(1)}
             className={
